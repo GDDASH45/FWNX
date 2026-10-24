@@ -1,0 +1,3 @@
+config PRINTK
+    bool "Enable kernel printing"
+    default y

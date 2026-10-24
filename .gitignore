@@ -11,6 +11,9 @@
 *.img
 *.iso
 *.efi
+kzImage
+/.config
+/scripts/kconfig/conf
 
 # Debug symbols and core dumps
 *.core

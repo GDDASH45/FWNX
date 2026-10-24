@@ -1,0 +1,39 @@
+
+# FWNX recursive object build system
+
+CC = gcc
+LD = ld
+
+MAKEFLAGS += --no-print-directory
+
+srctree := $(CURDIR)
+obj ?= .
+src := $(obj)
+
+-include $(srctree)/.config
+
+include $(src)/Makefile
+
+obj-y := $(sort $(obj-y))
+
+subdirs := $(filter %/,$(obj-y))
+objects := $(filter %.o,$(obj-y))
+targets := $(addprefix $(obj)/,$(objects))
+
+.PHONY: __build
+__build: $(targets)
+	@set -e; \
+	for dir in $(subdirs); do \
+		subdir=$$(printf '%s' "$$dir" | sed 's:/*$$::'); \
+		echo "  BUILD   $(obj)/$$subdir"; \
+		$(MAKE) -s -f $(srctree)/scripts/Makefile.build \
+			obj=$(obj)/$$subdir __build; \
+	done
+
+$(obj)/%.o: $(src)/%.c
+	@echo "  CC      $@"
+	@$(CC) $(CFLAGS) -c -o $@ $<
+
+$(obj)/%.o: $(src)/%.S
+	@echo "  AS      $@"
+	@$(CC) $(CFLAGS) -c -o $@ $<

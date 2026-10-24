@@ -1,0 +1,51 @@
+
+FWNX
+=======================
+
+Framework for a New eXecution environment
+
+FWNX is an experimental kernel project focused on building a kernel
+with its own architecture, system interfaces, memory management, and
+hardware support.
+
+About
+--------------------
+
+FWNX is a kernel development project intended for experimentation
+with low-level systems programming and operating system development.
+
+Goals
+--------------------
+
+- Develop a kernel from scratch.
+- Implement kernel initialization and basic console output.
+- Add physical and virtual memory management.
+- Implement interrupt and exception handling.
+- Develop device drivers.
+- Implement system calls.
+- Add process and thread management.
+- Explore filesystem support.
+
+Project Structure
+--------------------
+
+The source tree will evolve as kernel development progresses.
+
+Building
+--------------------
+
+Build instructions will be added once the initial build system
+and boot process have been implemented.
+
+Status
+--------------------
+
+FWNX is in early development.
+
+License
+--------------------
+
+FWNX is licensed under the GNU General Public License
+version 2 only (GPL-2.0-only).
+
+See the LICENSE file for the complete license text.

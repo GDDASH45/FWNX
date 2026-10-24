@@ -1,0 +1,33 @@
+
+# Compiled object files
+*.o
+*.a
+*.so
+*.ko
+
+# Executables and kernel images
+*.elf
+*.bin
+*.img
+*.iso
+*.efi
+
+# Debug symbols and core dumps
+*.core
+core
+core.*
+
+# Build output
+*.map
+*.sym
+
+# Editor and IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS-generated files
+.DS_Store
+Thumbs.db
